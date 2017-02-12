@@ -19,6 +19,10 @@ test str p = putStr (str ++ ": ") >> quickCheck p
 
 main :: IO ()
 main = do
+    putStrLn "============ EdgeOrdered ============"
+    quickCheck (axioms   :: GraphTestsuite (EdgeOrdered Int Int))
+    quickCheck (theorems :: GraphTestsuite (EdgeOrdered Int Int))
+
     putStrLn "============ Basic ============"
     quickCheck (axioms   :: GraphTestsuite (Basic Int))
     quickCheck (theorems :: GraphTestsuite (Basic Int))
